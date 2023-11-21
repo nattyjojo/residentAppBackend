@@ -25,6 +25,4 @@ app.use(content);
 app.use(getUsers);
 
 const port = 5000;
-app.listen(port, () => {
-  console.log(`localhost: ${port}`);
-});
+app.listen();
