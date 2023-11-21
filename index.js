@@ -10,6 +10,7 @@ import updataUserProfile from "./routes/updateUserProfile.js";
 import refreshCookie from "./routes/refreshCookie.js";
 import content from "./routes/post.js";
 import getUsers from "./routes/get-users.js";
+import serverless from "serverless-http";
 
 const app = express();
 app.use(express.static("userFiles"));
@@ -24,5 +25,4 @@ app.use(refreshCookie);
 app.use(content);
 app.use(getUsers);
 
-const port = 5000;
-app.listen();
+export const handler = serverless(app);
