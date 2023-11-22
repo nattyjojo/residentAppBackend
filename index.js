@@ -24,5 +24,5 @@ app.use(updataUserProfile);
 app.use(refreshCookie);
 app.use(content);
 app.use(getUsers);
-const hand = serverless(app);
-export default hand;
+const handler = serverless(app);
+export default handler;
