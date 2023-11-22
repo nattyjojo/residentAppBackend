@@ -1,4 +1,4 @@
-import express, { application } from "express";
+import express from "express";
 
 import corsOptions from "./middlewares/corsOptions.js";
 import cors from "cors";
@@ -24,5 +24,5 @@ app.use(updataUserProfile);
 app.use(refreshCookie);
 app.use(content);
 app.use(getUsers);
-
-export const handler = serverless(app);
+const hand = serverless(app);
+export default hand;
