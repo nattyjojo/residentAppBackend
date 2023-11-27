@@ -7,6 +7,7 @@ const login = Router();
 login.use(cookieParser());
 
 login.post("/login", async (req, res) => {
+  console.log("helo");
   const userData = req.body;
 
   try {
