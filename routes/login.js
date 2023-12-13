@@ -31,6 +31,8 @@ login.post("/login", async (req, res) => {
           sameSite: "None",
           secure: true,
           httpOnly: true,
+          path: "/",
+          domain: "http://localhost:3000",
         });
         console.log(jwtSign);
         if (codeType === "u") {
