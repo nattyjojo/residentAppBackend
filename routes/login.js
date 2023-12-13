@@ -7,12 +7,10 @@ const login = Router();
 login.use(cookieParser());
 
 login.post("/login", async (req, res) => {
-  console.log("helo");
+  console.log(req.baseUrl);
   const userData = req.body;
-
   try {
     const isExistingUser = await isRegistered(userData);
-
     if (!isExistingUser) {
       res.send(false);
       return;
@@ -28,7 +26,9 @@ login.post("/login", async (req, res) => {
 
       try {
         const jwtSign = signUser(userData.email);
+
         res.cookie("jwt", jwtSign);
+        console.log(jwtSign);
         if (codeType === "u") {
           res.send("user");
         } else {
