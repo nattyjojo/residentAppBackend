@@ -7,8 +7,8 @@ const login = Router();
 login.use(cookieParser());
 
 login.post("/login", async (req, res) => {
-  console.log(req.baseUrl);
   const userData = req.body;
+  console.log(req.header);
   try {
     const isExistingUser = await isRegistered(userData);
     if (!isExistingUser) {
@@ -32,7 +32,7 @@ login.post("/login", async (req, res) => {
           secure: true,
           httpOnly: true,
           path: "/",
-          domain: "http://localhost:3000",
+          domain: "localhost",
         });
         console.log(jwtSign);
         if (codeType === "u") {
