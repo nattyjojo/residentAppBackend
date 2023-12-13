@@ -1,11 +1,16 @@
 const allowedOrigins = [
-  "http://localhost:3000",
+  `http://localhost:3000`,
+  "http://localhost:3000/login",
   "http://localhost:5000",
   "http://localhost:5000/admin",
-  "localhost",
 ];
 
 const corsOptions = {
+  //   origin: "*", // Allow all origins
+  //   // ... other options
+  //   credentials: true,
+  // };
+
   origin: function (origin, callback) {
     console.log({ origin: origin });
 
@@ -18,5 +23,4 @@ const corsOptions = {
   },
   credentials: true,
 };
-
 export default corsOptions;

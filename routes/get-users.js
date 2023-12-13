@@ -9,4 +9,5 @@ getUsers.get("/get-users", async (req, res) => {
     res.send(null);
   }
 });
+// export const handler = serverless(getUsers);
 export default getUsers;
