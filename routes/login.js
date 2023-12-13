@@ -27,7 +27,11 @@ login.post("/login", async (req, res) => {
       try {
         const jwtSign = signUser(userData.email);
 
-        res.cookie("jwt", jwtSign);
+        res.cookie("jwt", jwtSignm, {
+          sameSite: "None",
+          secure: true,
+          httpOnly: true,
+        });
         console.log(jwtSign);
         if (codeType === "u") {
           res.send("user");
