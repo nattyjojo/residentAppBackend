@@ -1,6 +1,6 @@
 const allowedOrigins = [
   `http://localhost:3000`,
-  "https://funny-madeleine-e88430.netlify.app/"
+  "https://funny-madeleine-e88430.netlify.app/",
   "http://localhost:3000/login",
   "http://localhost:5000",
   "http://localhost:3000/admin",
