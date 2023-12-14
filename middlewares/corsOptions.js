@@ -1,24 +1,15 @@
 const allowedOrigins = [
-  `http://localhost:3000`,
-  "https://funny-madeleine-e88430.netlify.app",
-  "http://localhost:3000/login",
-  "http://localhost:5000",
-  "http://localhost:3000/admin",
+  "http://localhost:3000",
+  "https://657ad870f0f6a8000860e6da--dainty-selkie-5509f1.netlify.app",
 ];
 
 const corsOptions = {
-  //   origin: "*", // Allow all origins
-  //   // ... other options
-  //   credentials: true,
-  // };
-
   origin: function (origin, callback) {
     console.log({ origin: origin });
 
     if (allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
-      //callback(null, true);
       callback(new Error("Not allowed by CORS"));
     }
   },
