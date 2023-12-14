@@ -9,7 +9,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "devStart": "nodemon ./netlify/functions/api.js"
+    "devStart": "nodemon ./netlify/functions/api.js",
+    "deleteData": "nodemon test.js"
   },
   "author": "",
   "license": "ISC",

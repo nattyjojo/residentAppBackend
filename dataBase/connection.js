@@ -7,6 +7,7 @@ const dataBaseconection = async () => {
   const FOYER_DATA_BASE = URl;
   try {
     const connection = await mongoose.connect(FOYER_DATA_BASE);
+    console.log("connected");
   } catch (err) {
     console.log(err);
   }

@@ -8,7 +8,6 @@ login.use(cookieParser());
 
 login.post("/login", async (req, res) => {
   const userData = req.body;
-  console.log(req.header);
   try {
     const isExistingUser = await isRegistered(userData);
     if (!isExistingUser) {
