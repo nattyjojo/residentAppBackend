@@ -31,7 +31,8 @@ login.post("/login", async (req, res) => {
           secure: true,
           httpOnly: true,
           path: "/",
-          domain: "http://localhost:3000/",
+          domain:
+            "https://657ad870f0f6a8000860e6da--dainty-selkie-5509f1.netlify.app",
         });
         console.log(jwtSign);
         if (codeType === "u") {

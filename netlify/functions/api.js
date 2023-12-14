@@ -40,7 +40,5 @@ app.use(updataUserProfile);
 app.use(refreshCookie);
 app.use(content);
 app.use(getUsers);
-// api.use("/api", app);
-//app.listen(5000);functions
 
 export const handler = serverless(app);
