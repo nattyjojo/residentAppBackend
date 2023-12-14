@@ -31,7 +31,7 @@ login.post("/login", async (req, res) => {
           secure: true,
           httpOnly: true,
           path: "/",
-          domain: "funny-madeleine-e88430.netlify.app",
+          // domain: "funny-madeleine-e88430.netlify.app",
         });
         console.log(jwtSign);
         if (codeType === "u") {
