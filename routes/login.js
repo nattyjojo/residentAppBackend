@@ -30,7 +30,7 @@ login.post("/login", async (req, res) => {
         res.cookie("jwt", jwtSign, {
           sameSite: "None",
           secure: true,
-          httpOnly: true,
+          // httpOnly: true,
           path: "/",
           domain: "localhost",
         });

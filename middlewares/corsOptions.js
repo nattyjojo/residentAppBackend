@@ -2,7 +2,7 @@ const allowedOrigins = [
   `http://localhost:3000`,
   "http://localhost:3000/login",
   "http://localhost:5000",
-  "http://localhost:5000/admin",
+  "http://localhost:3000/admin",
 ];
 
 const corsOptions = {
