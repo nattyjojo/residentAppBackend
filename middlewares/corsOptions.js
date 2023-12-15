@@ -1,7 +1,7 @@
 const allowedOrigins = [
   "http://localhost:3000",
   "https://657ad870f0f6a8000860e6da--dainty-selkie-5509f1.netlify.app",
-  " https://funny-madeleine-e88430.netlify.app",
+  "https://funny-madeleine-e88430.netlify.app",
 ];
 
 const corsOptions = {
