@@ -29,12 +29,11 @@ login.post("/login", async (req, res) => {
         const jwtSign = signUser(userData.email);
 
         res.cookie("jwt", jwtSign, {
+          domain: ".dainty-selkie-5509f1.netlify.app",
           sameSite: "None",
           path: "/",
           httpOnly: true,
           secure: true,
-          //domain: ".dainty-selkie-5509f1.netlify.app",
-          domain: "https://dainty-selkie-5509f1.netlify.app",
         });
         if (codeType === "u") {
           res.send("user");
