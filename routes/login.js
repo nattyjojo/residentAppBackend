@@ -30,6 +30,7 @@ login.post("/login", async (req, res) => {
           sameSite: "None",
           httpOnly: true,
           secure: true,
+          domain: "dainty-selkie-5509f1.netlify",
         });
         console.log(jwtSign);
         if (codeType === "u") {
