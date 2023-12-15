@@ -9,6 +9,7 @@ login.use(cookieParser());
 login.post("/login", async (req, res) => {
   console.log(req.headers.origin);
   console.log("hello");
+  const origin = req.headers.origin;
   const userData = req.body;
   try {
     const isExistingUser = await isRegistered(userData);
@@ -29,7 +30,7 @@ login.post("/login", async (req, res) => {
         const jwtSign = signUser(userData.email);
 
         res.cookie("jwt", jwtSign, {
-          domain: ".dainty-selkie-5509f1.netlify.app",
+          domain: origin,
           sameSite: "None",
           path: "/",
           httpOnly: true,
