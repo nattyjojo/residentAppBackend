@@ -13,25 +13,25 @@ import content from "../../routes/post.js";
 import getUsers from "../../routes/get-users.js";
 
 const app = express();
-app.use((req, res, next) => {
-  res.header(
-    "Access-Control-Allow-Origin",
-    "https://657ad870f0f6a8000860e6da--dainty-selkie-5509f1.netlify.app",
-    "https://funny-madeleine-e88430.netlify.app"
-  );
-  res.header(
-    "Access-Control-Allow-Methods",
-    "GET, POST, OPTIONS, PUT, PATCH, DELETE"
-  );
-  res.header("Access-Control-Allow-Credentials", "true");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  next();
-});
-app.use(express.static("userFiles"));
+// app.use((req, res, next) => {
+//   res.header(
+//     "Access-Control-Allow-Origin",
+//     "https://657ad870f0f6a8000860e6da--dainty-selkie-5509f1.netlify.app",
+//     "https://funny-madeleine-e88430.netlify.app"
+//   );
+//   res.header(
+//     "Access-Control-Allow-Methods",
+//     "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+//   );
+//   res.header("Access-Control-Allow-Credentials", "true");
+//   res.header(
+//     "Access-Control-Allow-Headers",
+//     "Origin, X-Requested-With, Content-Type, Accept"
+//   );
+//   next();
+// });
 app.use(cors(corsOptions));
+app.use(express.static("userFiles"));
 app.use(express.json());
 app.use(register);
 app.use(login);
