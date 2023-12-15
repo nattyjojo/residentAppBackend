@@ -6,3 +6,4 @@
   from = "/*"
   status = 200
   to = "/.netlify/functions/api/:splat"
+  Access-Control-Allow-Origin: "https://funny-madeleine-e88430.netlify.app"
