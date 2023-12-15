@@ -15,10 +15,7 @@
 //   credentials: true,
 // };
 const corsOptions = {
-  origin: [
-    "https://657ad870f0f6a8000860e6da--dainty-selkie-5509f1.netlify.app",
-    "https://funny-madeleine-e88430.netlify.app",
-  ],
+  origin: ["https://dainty-selkie-5509f1.netlify.app"],
   methods: "GET, POST, OPTIONS, PUT, PATCH, DELETE",
   credentials: true,
   allowedHeaders: "Origin, X-Requested-With, Content-Type, Accept",
