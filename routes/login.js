@@ -28,8 +28,8 @@ login.post("/login", async (req, res) => {
 
         res.cookie("jwt", jwtSign, {
           sameSite: "None",
+          httpOnly: true,
           secure: true,
-          domain: "dainty-selkie-5509f1.netlify.app",
         });
         console.log(jwtSign);
         if (codeType === "u") {
