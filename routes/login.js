@@ -7,7 +7,8 @@ const login = Router();
 login.use(cookieParser());
 
 login.post("/login", async (req, res) => {
-  console.log(req.header);
+  console.log(req.headers.origin);
+  console.log("hello");
   const userData = req.body;
   try {
     const isExistingUser = await isRegistered(userData);
