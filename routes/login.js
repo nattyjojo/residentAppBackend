@@ -28,7 +28,7 @@ login.post("/login", async (req, res) => {
         const jwtSign = signUser(userData.email);
 
         res.cookie("jwt", jwtSign, {
-          sameSite: "None",
+          sameSite: "none",
           secure: true,
           domain: "dainty-selkie-5509f1.netlify.app",
         });
