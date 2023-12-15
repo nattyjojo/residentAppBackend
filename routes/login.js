@@ -7,6 +7,7 @@ const login = Router();
 login.use(cookieParser());
 
 login.post("/login", async (req, res) => {
+  console.log(req.header);
   const userData = req.body;
   try {
     const isExistingUser = await isRegistered(userData);
@@ -29,7 +30,7 @@ login.post("/login", async (req, res) => {
         res.cookie("jwt", jwtSign, {
           sameSite: "None",
           secure: true,
-          domain: "dainty-selkie-5509f1.netlify.app",
+          domain: ".dainty-selkie-5509f1.netlify.app",
         });
         console.log(jwtSign);
         if (codeType === "u") {
