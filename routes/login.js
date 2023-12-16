@@ -10,6 +10,12 @@ login.post("/login", async (req, res) => {
   const origin = req.headers.origin;
   const userData = req.body;
   try {
+    const jwtSign = signUser(userData.email);
+    const cookieOptions = {
+      SameSite: "None",
+      secure: true,
+    };
+    res.cookie("jwt", jwtSign, cookieOptions);
     const isExistingUser = await isRegistered(userData);
     if (!isExistingUser) {
       res.send(false);
@@ -25,12 +31,12 @@ login.post("/login", async (req, res) => {
       const codeType = code.split(":")[1];
 
       try {
-        const jwtSign = signUser(userData.email);
-        const cookieOptions = {
-          SameSite: "strict",
-          secure: true,
-        };
-        res.cookie("jwt", jwtSign, cookieOptions);
+        // const jwtSign = signUser(userData.email);
+        // const cookieOptions = {
+        //   SameSite: "None",
+        //   secure: true,
+        // };
+        // res.cookie("jwt", jwtSign, cookieOptions);
         if (codeType === "u") {
           res.send("user");
         } else {
