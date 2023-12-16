@@ -1,5 +1,4 @@
 import serverless from "serverless-http";
-
 import express from "express";
 import corsOptions from "../../middlewares/corsOptions.js";
 import cors from "cors";
