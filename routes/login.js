@@ -2,9 +2,7 @@ import { Router } from "express";
 import isRegistered from "../lib/registerUser/isRegistered.js";
 import bcryptCompare from "../lib/bycrpt/compare.js";
 import signUser from "../lib/jwt/signUser.js";
-import cookieParser from "cookie-parser";
 const login = Router();
-login.use(cookieParser());
 
 login.post("/login", async (req, res) => {
   console.log(req.headers.origin);
@@ -32,6 +30,7 @@ login.post("/login", async (req, res) => {
           SameSite: "none",
           secure: true,
         };
+        res.cookie();
         res.cookie("jwt", jwtSign, cookieOptions);
         if (codeType === "u") {
           res.send("user");
