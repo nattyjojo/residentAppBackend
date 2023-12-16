@@ -29,7 +29,7 @@ login.post("/login", async (req, res) => {
       try {
         const jwtSign = signUser(userData.email);
         const cookieOptions = {
-          SameSite: "None",
+          SameSite: "none",
           secure: true,
         };
         res.cookie("jwt", jwtSign, cookieOptions);
