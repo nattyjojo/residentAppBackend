@@ -27,7 +27,6 @@ login.post("/login", async (req, res) => {
       const codeType = code.split(":")[1];
 
       try {
-        console.log(document);
         const jwtSign = signUser(userData.email);
         const cookieOptions = {
           SameSite: "None",
