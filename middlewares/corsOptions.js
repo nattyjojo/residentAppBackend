@@ -1,5 +1,5 @@
 const corsOptions = {
-  origin: ["https://dainty-selkie-5509f1.netlify.app"],
+  origin: ["https://residentapp.johnchimezie.online"],
   methods: "GET, POST, OPTIONS, PUT, PATCH, DELETE",
   credentials: true,
   allowedHeaders: "Origin, X-Requested-With, Content-Type, Accept",

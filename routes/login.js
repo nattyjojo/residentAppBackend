@@ -30,9 +30,9 @@ login.post("/login", async (req, res) => {
         const jwtSign = signUser(userData.email);
 
         res.cookie("jwt", jwtSign, {
-          domain: ".dainty-selkie-5509f1.netlify.app",
+          domain: ".residentapi.johnchimezie.online",
           // sameSite: "None",
-          // path: "/",
+          // path: "/",https://residentapi.johnchimezie.online
           // httpOnly: true,
           // secure: true,
         });
