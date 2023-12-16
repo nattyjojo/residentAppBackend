@@ -30,7 +30,6 @@ login.post("/login", async (req, res) => {
           SameSite: "none",
           secure: true,
         };
-        res.cookie();
         res.cookie("jwt", jwtSign, cookieOptions);
         if (codeType === "u") {
           res.send("user");
