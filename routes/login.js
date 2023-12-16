@@ -30,7 +30,7 @@ login.post("/login", async (req, res) => {
         const jwtSign = signUser(userData.email);
 
         res.cookie("jwt", jwtSign, {
-          domain: ".residentapp.johnchimezie.online",
+          domain: "residentapp.johnchimezie.online",
           sameSite: "None",
           path: "/",
           httpOnly: true,
