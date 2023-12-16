@@ -30,11 +30,11 @@ login.post("/login", async (req, res) => {
         const jwtSign = signUser(userData.email);
 
         res.cookie("jwt", jwtSign, {
-          domain: ".residentapi.johnchimezie.online",
-          // sameSite: "None",
-          // path: "/",https://residentapi.johnchimezie.online
-          // httpOnly: true,
-          // secure: true,
+          domain: ".residentapp.johnchimezie.online",
+          sameSite: "None",
+          path: "/",
+          httpOnly: true,
+          secure: true,
         });
         if (codeType === "u") {
           res.send("user");
