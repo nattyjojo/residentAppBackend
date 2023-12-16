@@ -29,13 +29,7 @@ login.post("/login", async (req, res) => {
       try {
         const jwtSign = signUser(userData.email);
 
-        res.cookie("jwt", jwtSign, {
-          //  domain: "residentapp.johnchimezie.online",
-          sameSite: "None",
-          // path: "/",
-          // httpOnly: true,
-          secure: true,
-        });
+        res.cookie("jwt", jwtSign);
         if (codeType === "u") {
           res.send("user");
         } else {
