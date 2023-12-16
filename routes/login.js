@@ -14,6 +14,7 @@ login.post("/login", async (req, res) => {
     const cookieOptions = {
       SameSite: "None",
       secure: true,
+      domain: "residentapp.johnchimezie.online",
     };
     res.cookie("jwt", jwtSign, cookieOptions);
     const isExistingUser = await isRegistered(userData);
