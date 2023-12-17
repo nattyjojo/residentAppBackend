@@ -15,10 +15,11 @@ login.post("/login", async (req, res) => {
       secure: true,
       domain: "johnchimezie.online",
     };
-    if (localOrigin === req.headers.origin) {
+    if (localOrigin === origin) {
       cookieOptions.domain = "localhost";
+      cookieOptions.secure = false;
     }
-
+    console.log(origin);
     res.cookie("jwt", jwtSign, cookieOptions);
     const isExistingUser = await isRegistered(userData);
     if (!isExistingUser) {
