@@ -5,10 +5,9 @@ import signUser from "../lib/jwt/signUser.js";
 const login = Router();
 
 login.post("/login", async (req, res) => {
-  console.log(req.headers.origin);
-  console.log("hello");
   const origin = req.headers.origin;
   const userData = req.body;
+  const localOrigin = "http://localhost:3000";
   try {
     const jwtSign = signUser(userData.email);
     const cookieOptions = {
@@ -16,6 +15,10 @@ login.post("/login", async (req, res) => {
       secure: true,
       domain: "johnchimezie.online",
     };
+    if (localOrigin === req.headers.origin) {
+      cookieOptions.domain = "localhost";
+    }
+
     res.cookie("jwt", jwtSign, cookieOptions);
     const isExistingUser = await isRegistered(userData);
     if (!isExistingUser) {
