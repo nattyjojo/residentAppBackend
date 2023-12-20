@@ -71,9 +71,9 @@ content.post(
   }
 );
 
-content.get("/post", async (req, res) => {
-  const getPosts = await handleGetPost();
-
+content.get("/post/:type", async (req, res) => {
+  const postType = req.params;
+  const getPosts = await handleGetPost(postType);
   res.send(getPosts);
 });
 

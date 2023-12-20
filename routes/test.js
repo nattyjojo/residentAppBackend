@@ -11,19 +11,23 @@
 
 //const randomChar = crypto.randomUUID();
 
-import User from "../dataBase/UserSchema.js";
-import postSchema from "../dataBase/postSchema.js";
-import mongoose from "mongoose";
+// import User from "../dataBase/UserSchema.js";
+// import postSchema from "../dataBase/postSchema.js";
+// import mongoose from "mongoose";
 
-const deleteAll = async () => {
-  try {
-    const connection = await mongoose.connect(FOYER_DATA_BASE);
-    //
-    await User.deleteMany({});
-    await postSchema.deleteMany({});
-    console.log("done");
-  } catch (err) {
-    console.log(err);
-  }
-};
-deleteAll();
+// const deleteAll = async () => {
+//   try {
+//     const connection = await mongoose.connect(FOYER_DATA_BASE);
+//     //
+//     await User.deleteMany({});
+//     await postSchema.deleteMany({});
+//     console.log("done");
+//   } catch (err) {
+//     console.log(err);
+//   }
+// };
+// deleteAll();
+
+import path from "path";
+
+console.log(path);

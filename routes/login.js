@@ -2,25 +2,15 @@ import { Router } from "express";
 import isRegistered from "../lib/registerUser/isRegistered.js";
 import bcryptCompare from "../lib/bycrpt/compare.js";
 import signUser from "../lib/jwt/signUser.js";
+import dotenv from "dotenv";
+dotenv.config();
 const login = Router();
 
 login.post("/login", async (req, res) => {
   const origin = req.headers.origin;
   const userData = req.body;
-  const localOrigin = "http://localhost:3000";
+  const localOrigin = process.env.RESIDENT_ADDRESS;
   try {
-    const jwtSign = signUser(userData.email);
-    const cookieOptions = {
-      SameSite: "None",
-      secure: true,
-      domain: "johnchimezie.online",
-    };
-    if (localOrigin === origin) {
-      cookieOptions.domain = "localhost";
-      cookieOptions.secure = false;
-    }
-    console.log(origin);
-    res.cookie("jwt", jwtSign, cookieOptions);
     const isExistingUser = await isRegistered(userData);
     if (!isExistingUser) {
       res.send(false);
@@ -36,12 +26,14 @@ login.post("/login", async (req, res) => {
       const codeType = code.split(":")[1];
 
       try {
-        // const jwtSign = signUser(userData.email);
-        // const cookieOptions = {
-        //   SameSite: "None",
-        //   secure: true,
-        // };
-        // res.cookie("jwt", jwtSign, cookieOptions);
+        const jwtSign = signUser(userData.email);
+        const cookieOptions = {
+          SameSite: "None",
+          secure: true,
+          domain: "johnchimezie.online",
+        };
+        res.cookie("jwt", jwtSign, cookieOptions);
+
         if (codeType === "u") {
           res.send("user");
         } else {
