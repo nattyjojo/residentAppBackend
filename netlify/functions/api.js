@@ -30,5 +30,5 @@ app.use(getUsers);
 app.use(getUserFiles);
 
 export const handler = serverless(app, {
-  binary: ["image/*"],
+  binary: ["image/png"],
 });
