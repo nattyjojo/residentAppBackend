@@ -4,5 +4,5 @@ const banner = Router();
 banner.use("/files/:image", (req, res, next) => {
   next();
 });
-banner.use("/files/:image", express.static("./userFiles"));
+banner.use("/files/:image", express.static("userFiles/banner"));
 export default banner;
