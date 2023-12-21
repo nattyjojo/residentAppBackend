@@ -1,5 +1,7 @@
 import { Router } from "express";
-import { promises as fsPromises } from "fs";
+import express from "express";
+
 const getUserFiles = Router();
-getUserFiles.get("/getfiles/:image", (req, res) => {});
+
+getUserFiles.get("/getfiles/:image", express.static("userFiles"));
 export default getUserFiles;

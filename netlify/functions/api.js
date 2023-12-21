@@ -14,11 +14,10 @@ import cookieParser from "cookie-parser";
 import getUserFiles from "../../routes/getUserFile.js";
 import banner from "../../routes/files.js";
 const app = express();
-app.use(cors(corsOptions));
 app.use(express.json());
 app.use(cookieParser());
 app.use(banner);
-
+app.use(cors(corsOptions));
 app.use(register);
 app.use(login);
 app.use(validateCookie);
