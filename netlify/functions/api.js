@@ -29,6 +29,6 @@ app.use(getUsers);
 app.use(getUserFiles);
 
 export const handler = serverless(app, {
-  binary: ["application/json", "image/png"],
-  // basePath: "https://residentapp.johnchimezie.online",
+  binary: ["application/json", "image/*"],
+  basePath: "https://residentapp.johnchimezie.online",
 });
