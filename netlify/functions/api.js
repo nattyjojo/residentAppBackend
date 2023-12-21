@@ -16,7 +16,7 @@ import banner from "../../routes/files.js";
 const app = express();
 app.use(express.json());
 app.use(cookieParser());
-app.use(banner);
+
 app.use(cors(corsOptions));
 app.use(register);
 app.use(login);
@@ -26,12 +26,11 @@ app.use(updataUserProfile);
 app.use(refreshCookie);
 app.use(content);
 app.use(getUsers);
-app.use(getUserFiles);
-
+app.use(banner);
 export const handler = serverless(app, {
   binary: ["image/*"],
 
-  //basePath: "https://residentapp.johnchimezie.online",
+  basePath: "https://residentapp.johnchimezie.online",
 });
 // https://residentapi.johnchimezie.online/files/userFiles/banner/ad56b096-5b9e-430c-a4b6-c544cbb23a7a-banner.png
 //https://residentapp.johnchimezie.online/_ipx/w_128,q_75/https%3A%2F%2Fresidentapi.johnchimezie.online%2Ffiles%2Fbanner%2Fad56b096-5b9e-430c-a4b6-c544cbb23a7a-banner.png?url=https%3A%2F%2Fresidentapi.johnchimezie.online%2Ffiles%2Fbanner%2Fad56b096-5b9e-430c-a4b6-c544cbb23a7a-banner.png&w=128&q=75
