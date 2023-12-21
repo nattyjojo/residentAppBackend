@@ -1,5 +1,5 @@
 import { Router } from "express";
 const banner = Router();
 
-banner.use("/files/:imagePath", express.static("userFiles"));
+banner.get("/files/:imagePath", express.static("userFiles"));
 export default banner;
