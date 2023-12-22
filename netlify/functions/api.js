@@ -29,7 +29,7 @@ app.use(banner);
 export const handler = serverless(app, {
   binary: ["image/*"],
 
-  basePath: "https://residentapp.johnchimezie.online",
+  basePath: "/",
 });
 // https://residentapi.johnchimezie.online/files/userFiles/banner/ad56b096-5b9e-430c-a4b6-c544cbb23a7a-banner.png
 //https://residentapp.johnchimezie.online/_ipx/w_128,q_75/https%3A%2F%2Fresidentapi.johnchimezie.online%2Ffiles%2Fbanner%2Fad56b096-5b9e-430c-a4b6-c544cbb23a7a-banner.png?url=https%3A%2F%2Fresidentapi.johnchimezie.online%2Ffiles%2Fbanner%2Fad56b096-5b9e-430c-a4b6-c544cbb23a7a-banner.png&w=128&q=75
