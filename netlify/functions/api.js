@@ -13,9 +13,11 @@ import getUsers from "../../routes/get-users.js";
 import cookieParser from "cookie-parser";
 //import banner from "../../routes/files.js";
 const app = express();
+app.use("files/:jjsj", express.static("userFiles"));
+
 app.use(express.json());
 app.use(cookieParser());
-app.use("files/:image", express.static("userFiles"));
+app.use("files/:jjsj", express.static("userFiles"));
 app.use(cors(corsOptions));
 app.use(register);
 app.use(login);
@@ -27,10 +29,12 @@ app.use(content);
 app.use(getUsers);
 //app.use(banner);
 export const handler = serverless(app, {
-  binary: ["image/*"],
+  binary: ["image/jpeg", "image/png", "image/gif"],
 
   basePath: "/",
 });
+// /netlify/functions/
 // https://residentapi.johnchimezie.online/files/userFiles/banner/ad56b096-5b9e-430c-a4b6-c544cbb23a7a-banner.png
 //https://residentapp.johnchimezie.online/_ipx/w_128,q_75/https%3A%2F%2Fresidentapi.johnchimezie.online%2Ffiles%2Fbanner%2Fad56b096-5b9e-430c-a4b6-c544cbb23a7a-banner.png?url=https%3A%2F%2Fresidentapi.johnchimezie.online%2Ffiles%2Fbanner%2Fad56b096-5b9e-430c-a4b6-c544cbb23a7a-banner.png&w=128&q=75
 //"application/json",
+//home/jojo/becode/client-projects/residentAppBackend/netlify/functions/api.js
