@@ -4,10 +4,12 @@ import path from "path";
 import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const banner = Router();
-const __dirname = path.dirname(__filename) + "/userFiles";
 banner.use("/files/:imagePath", (req, res, next) => {
-  console.log(__dirname);
+  console.log(path.dirname(__filename) + "/userFiles");
   next();
 });
-banner.use("/files/:imagePath", express.static(__dirname));
+banner.use(
+  "/files/:imagePath",
+  express.static(path.dirname(__filename) + "/userFiles")
+);
 export default banner;
