@@ -13,7 +13,7 @@ import getUsers from "../../routes/get-users.js";
 import cookieParser from "cookie-parser";
 //import banner from "../../routes/files.js";
 const app = express();
-app.use("files/:jjsj", express.static("userFiles"));
+app.use("files/:jjsj", express.static("userFiles/banner"));
 
 app.use(express.json());
 app.use(cookieParser());
