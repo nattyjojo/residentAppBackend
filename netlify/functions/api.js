@@ -16,7 +16,6 @@ const app = express();
 
 app.use(express.json());
 app.use(cookieParser());
-app.use("files/:jjsj", express.static("userFiles"));
 app.use(cors(corsOptions));
 app.use(register);
 app.use(login);
@@ -30,9 +29,9 @@ app.use("files/:jjsj", express.static("userFiles/banner"));
 
 //app.use(banner);
 export const handler = serverless(app, {
-  binary: ["image/jpeg", "image/png", "image/gif"],
+  binary: ["image/*"], //imege.jpeg/"image/png", "image/gif"
 
-  basePath: "/",
+  //basePath: "/",
 });
 // /netlify/functions/
 // https://residentapi.johnchimezie.online/files/userFiles/banner/ad56b096-5b9e-430c-a4b6-c544cbb23a7a-banner.png
