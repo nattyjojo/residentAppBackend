@@ -25,7 +25,10 @@ app.use(updataUserProfile);
 app.use(refreshCookie);
 app.use(content);
 app.use(getUsers);
-app.use("files/:jjsj", express.static("userFiles/banner"));
+app.use(
+  "files/:jjsj",
+  express.static("flourishing-froyo-25e1d8/userFiles/banner")
+);
 
 //app.use(banner);
 export const handler = serverless(app, {
