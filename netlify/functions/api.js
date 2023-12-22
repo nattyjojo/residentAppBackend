@@ -11,11 +11,11 @@ import refreshCookie from "../../routes/refreshCookie.js";
 import content from "../../routes/post.js";
 import getUsers from "../../routes/get-users.js";
 import cookieParser from "cookie-parser";
-import banner from "../../routes/files.js";
+//import banner from "../../routes/files.js";
 const app = express();
 app.use(express.json());
 app.use(cookieParser());
-
+app.use("files/:image", express.static("userFiles"));
 app.use(cors(corsOptions));
 app.use(register);
 app.use(login);
@@ -25,7 +25,7 @@ app.use(updataUserProfile);
 app.use(refreshCookie);
 app.use(content);
 app.use(getUsers);
-app.use(banner);
+//app.use(banner);
 export const handler = serverless(app, {
   binary: ["image/*"],
 

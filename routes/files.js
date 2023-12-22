@@ -3,8 +3,10 @@ import express from "express";
 
 const banner = Router();
 
-banner.use(express.static("userFiles"));
-banner.get("files", (req, res) => {
-  res.send("ok");
+banner.get("files/:image", (req, res, next) => {
+  console.log(req.headers);
+  res.send("hello");
+  //next();
 });
+//banner.use("files:image", express.static("userFiles"));
 export default banner;
