@@ -13,7 +13,6 @@ import getUsers from "../../routes/get-users.js";
 import cookieParser from "cookie-parser";
 //import banner from "../../routes/files.js";
 const app = express();
-app.use("files/:jjsj", express.static("userFiles/banner"));
 
 app.use(express.json());
 app.use(cookieParser());
@@ -27,6 +26,8 @@ app.use(updataUserProfile);
 app.use(refreshCookie);
 app.use(content);
 app.use(getUsers);
+app.use("files/:jjsj", express.static("userFiles/banner"));
+
 //app.use(banner);
 export const handler = serverless(app, {
   binary: ["image/jpeg", "image/png", "image/gif"],
