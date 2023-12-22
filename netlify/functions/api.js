@@ -11,7 +11,6 @@ import refreshCookie from "../../routes/refreshCookie.js";
 import content from "../../routes/post.js";
 import getUsers from "../../routes/get-users.js";
 import cookieParser from "cookie-parser";
-import getUserFiles from "../../routes/getUserFile.js";
 import banner from "../../routes/files.js";
 const app = express();
 app.use(express.json());
