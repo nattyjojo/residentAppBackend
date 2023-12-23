@@ -31,7 +31,6 @@ app.use((req, res, next) => {
 //   next();
 // });
 
-app.use("/userFile/:image", express.static("userFiles/banner"));
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use(register);
@@ -42,6 +41,7 @@ app.use(updataUserProfile);
 app.use(refreshCookie);
 app.use(content);
 app.use(getUsers);
+app.use("/userFile/:image", express.static("userFiles/banner"));
 
 // app.listen(() => {
 //   console.log("lossss");
