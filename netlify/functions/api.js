@@ -29,5 +29,5 @@ app.use(getUsers);
 export const handler = serverless(app, {
   binary: ["image/*"], //imege.jpeg/"image/png", "image/gif"
 
-  basePath: "https://residentapi.johnchimezie.online//",
+  basePath: "https://residentapi.johnchimezie.online",
 });
