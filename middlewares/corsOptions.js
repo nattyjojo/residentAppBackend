@@ -1,6 +1,7 @@
 const corsOptions = {
   origin: [
     "https://residentapp.johnchimezie.online",
+    "residentapp.johnchimezie.online",
     "http://localhost:3000",
     "localhost",
   ],

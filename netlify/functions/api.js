@@ -30,6 +30,6 @@ export const handler = serverless(app, {
   //binary: false,
   binary: ["image/*"], //imege.jpeg/"image/png", "image/gif"
   // basePath: "localhost",
-  // basePath: "https://residentapi.johnchimezie.online",
-  basePath: "residentapi.johnchimezie",
+  // basePath: "residentapi.johnchimezie.online",
+  basePath: "residentapi.johnchimezie.online",
 });
