@@ -9,14 +9,13 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "devStart": "nodemon ./netlify/functions/api.js",
+    "devStart": "nodemon index.js",
     "deleteData": "nodemon test.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@netlify/functions": "^2.4.0",
-    "@types/express": "latest",
     "bcrypt": "^5.1.1",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
