@@ -43,7 +43,8 @@ app.use(refreshCookie);
 app.use(content);
 app.use(getUsers);
 
-app.listen(() => {
-  console.log("lossss");
-});
-//export default app;
+// app.listen(() => {
+//   console.log("lossss");
+// });
+
+export default app;
