@@ -41,8 +41,9 @@ app.use(updataUserProfile);
 app.use(refreshCookie);
 app.use(content);
 app.use(getUsers);
-app.use("/userFile/:image", express.static("userFiles/banner"));
-
+let imagepath = "";
+let imageOK = "";
+app.use(express.static("userFiles"));
 // app.listen(() => {
 //   console.log("lossss");
 // });
