@@ -2,10 +2,20 @@
   external_node_modules = ["express"]
   node_bundler = "esbuild"
 
+
+[[redirects]]
+  from = "/userFile/*"
+  to = "/userFiles/:splat"
+   status = 200
+
 [[redirects]]
   force = true
   from = "/*"
   status = 200
   to = "/.netlify/functions/api/:splat"
+  
+
+
+
 
 

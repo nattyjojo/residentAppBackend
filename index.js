@@ -26,10 +26,6 @@ app.use((req, res, next) => {
   );
   next();
 });
-// app.use("/userFile/:image", (req, res, next) => {
-//   console.log(req.params);
-//   next();
-// });
 
 app.use(cors(corsOptions));
 app.use(express.json());
@@ -41,11 +37,5 @@ app.use(updataUserProfile);
 app.use(refreshCookie);
 app.use(content);
 app.use(getUsers);
-let imagepath = "";
-let imageOK = "";
-app.use(express.static("userFiles"));
-// app.listen(() => {
-//   console.log("lossss");
-// });
 
 export default app;
