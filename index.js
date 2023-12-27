@@ -9,6 +9,7 @@ import updataUserProfile from "./routes/updateUserProfile.js";
 import refreshCookie from "./routes/refreshCookie.js";
 import content from "./routes/post.js";
 import getUsers from "./routes/get-users.js";
+import singlePost from "./routes/singlePost.js";
 
 const app = express();
 app.use((req, res, next) => {
@@ -37,5 +38,6 @@ app.use(updataUserProfile);
 app.use(refreshCookie);
 app.use(content);
 app.use(getUsers);
+app.use(singlePost);
 
 export default app;
