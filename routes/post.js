@@ -51,7 +51,7 @@ content.use(bodyParser.urlencoded({ extended: true }));
 
 const storage = multer.diskStorage({
   destination: function (req, file, callback) {
-    const path = `/userFiles/banner/`;
+    const path = `../userFiles/banner/`;
     callback(null, path);
   },
   filename: function (req, file, callback) {
