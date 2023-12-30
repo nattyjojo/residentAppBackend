@@ -12,7 +12,7 @@ import getUsers from "./routes/get-users.js";
 import singlePost from "./routes/singlePost.js";
 
 const app = express();
-app.use("https://residentapp.johnchimezie.online", (req, res, next) => {
+app.use("https://residentapi.johnchimezie.online", (req, res, next) => {
   res.header(
     "Access-Control-Allow-Origin",
     "https://657ad870f0f6a8000860e6da--dainty-selkie-5509f1.netlify.app"
