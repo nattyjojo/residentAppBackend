@@ -31,8 +31,6 @@ login.post("/login", async (req, res) => {
           SameSite: "None",
           secure: true,
           domain: "johnchimezie.online",
-
-          //domain: "localhost",
         };
         res.cookie("jwt", jwtSign, cookieOptions);
 
