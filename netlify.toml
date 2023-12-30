@@ -4,11 +4,6 @@
 
 
 [[redirects]]
-  from = "/post/*"
-  to = "/userFiles/:splat"
-   status = 200
-
-[[redirects]]
   from = "/userFile/*"
   to = "/userFiles/:splat"
    status = 200
